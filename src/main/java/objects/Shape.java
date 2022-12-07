@@ -1,7 +1,11 @@
 package objects;
 
+import java.math.BigDecimal;
+
 public interface Shape {
 
-    public double getPerimeter();
-    public double getArea();
+    public BigDecimal getPerimeter();
+    public BigDecimal getArea();
+
+
 }

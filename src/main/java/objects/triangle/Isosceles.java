@@ -2,16 +2,25 @@ package objects.triangle;
 
 import objects.Polygon;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
-public class Isosceles extends Polygon {
+public class Isosceles extends AbstractTriangle {
 
     public Isosceles(double leg, double base) {
-        super(leg, leg, base);
-        if( leg <= 0 || base <= 0)
-            throw new RuntimeException("Invalid dimensions for Isosceles Triangle.");
+
+
         double alpha = Math.toDegrees(Math.acos(base / (2 * leg)));
-        setAnglesList(Arrays.asList(alpha, alpha, 180.0 - (2 * alpha) ));
+//        setAnglesList(Arrays.asList(alpha, alpha, 180.0 - (2 * alpha) ));
     }
 
+    @Override
+    protected BigDecimal calculateArea() {
+        return null;
+    }
+
+    @Override
+    protected BigDecimal calculatePerimeter() {
+        return null;
+    }
 }
