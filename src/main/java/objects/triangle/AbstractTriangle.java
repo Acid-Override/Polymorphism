@@ -28,18 +28,23 @@ public abstract class AbstractTriangle extends Polygon {
     public void setSideA(BigDecimal sideA) {
         this.sideA = sideA;
     }
+
     public BigDecimal getSideA() {
         return sideA;
     }
+
     public void setSideB(BigDecimal sideB) {
         this.sideB = sideB;
     }
+
     public BigDecimal getSideB() {
         return sideB;
     }
+
     public void setSideC(BigDecimal sideC) {
         this.sideC = sideC;
     }
+
     public BigDecimal getSideC() {
         return sideC;
     }
@@ -47,6 +52,7 @@ public abstract class AbstractTriangle extends Polygon {
     public BigDecimal getBase() {
         return base;
     }
+
     public void setBase(BigDecimal base) {
         this.base = base;
     }
@@ -55,6 +61,7 @@ public abstract class AbstractTriangle extends Polygon {
     public BigDecimal getHeight() {
         return height;
     }
+
     public void setHeight(BigDecimal height) {
         this.height = height;
     }
@@ -62,6 +69,7 @@ public abstract class AbstractTriangle extends Polygon {
     public BigDecimal getHypotenuse() {
         return hypotenuse;
     }
+
     public void setHypotenuse(BigDecimal hypotenuse) {
         this.hypotenuse = hypotenuse;
     }
@@ -69,6 +77,7 @@ public abstract class AbstractTriangle extends Polygon {
     public void setAlphaAngle(BigDecimal alphaAngle) {
         this.alphaAngle = alphaAngle;
     }
+
     public BigDecimal getAlphaAngle() {
         return alphaAngle;
     }
@@ -76,6 +85,7 @@ public abstract class AbstractTriangle extends Polygon {
     public void setThetaAngle(BigDecimal thetaAngle) {
         this.thetaAngle = thetaAngle;
     }
+
     public BigDecimal getThetaAngle() {
         return thetaAngle;
     }
@@ -83,21 +93,26 @@ public abstract class AbstractTriangle extends Polygon {
     public void setOmegaAngle(BigDecimal omegaAngle) {
         this.omegaAngle = omegaAngle;
     }
+
     public BigDecimal getOmegaAngle() {
         return omegaAngle;
     }
 
     protected abstract void setAngles();
+
     public void setPerimeter(BigDecimal perimeter) {
         this.perimeter = perimeter;
     }
+
     @Override
     public BigDecimal getArea() {
         return area;
     }
+
     public void setArea(BigDecimal area) {
         this.area = area;
     }
+
     @Override
     public BigDecimal getPerimeter() {
         return perimeter;

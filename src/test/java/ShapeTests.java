@@ -17,45 +17,51 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ShapeTests {
 
     @Test
-    public void getCorrectPerimeterOfASquare(){
+    public void getCorrectPerimeterOfASquare() {
         Shape square = new Square(4);
         BigDecimal expectedPerimeter = BigDecimal.valueOf(16);
         assertEquals(0, expectedPerimeter.compareTo(square.getPerimeter()));
     }
+
     @Test
-    public void getCorrectPerimeterOfACircle(){
+    public void getCorrectPerimeterOfACircle() {
         Circle circle = new Circle(new BigDecimal(7));
         BigDecimal expectedPerimeter = BigDecimal.valueOf(43.98);
         assertEquals(0, expectedPerimeter.compareTo(circle.getPerimeter()));
     }
+
     //EXTRA CREDIT
     @Test
-    public void getTheCorrectAreaOfARectangle(){
+    public void getTheCorrectAreaOfARectangle() {
         Shape rectangle = new Rectangle(2, 4);
         BigDecimal expectedArea = BigDecimal.valueOf(8);
         assertEquals(0, expectedArea.compareTo(rectangle.getArea()));
     }
+
     @Test
-    public void getTheCorrectAreaOfACircle(){
+    public void getTheCorrectAreaOfACircle() {
         Ellipse circle = new Circle(new BigDecimal(3));
         BigDecimal expectedArea = BigDecimal.valueOf(28.27);
         assertEquals(0, expectedArea.compareTo(circle.getArea()));
     }
+
     @Test
-    public void testIfTwoPolygonsAreEqual(){
+    public void testIfTwoPolygonsAreEqual() {
 
         Polygon one = new Square(4);
         Polygon two = new Rectangle(4, 4);
-        assertEquals(one,two);
+        assertEquals(one, two);
     }
+
     @Test
     public void testIfTwoRectanglesWithOppositeDimensionsAreEqual() {
         Rectangle one = new Rectangle(2, 4);
         Rectangle two = new Rectangle(4, 2);
         assertEquals(one, two);
     }
+
     @Test
-    public void testIfTwoEllipsesAreEqual(){
+    public void testIfTwoEllipsesAreEqual() {
         //create two ellipses and compare them
         Shape ellipse = new Ellipse(new BigDecimal(4), new BigDecimal(4));
         Shape circle = new Circle(new BigDecimal(4));
@@ -71,12 +77,14 @@ public class ShapeTests {
         BigDecimal expectedArea = BigDecimal.valueOf(3.90);
         assertEquals(0, expectedArea.compareTo(equilateral.getArea()));
     }
+
     @Test
     public void getTheCorrectPerimeterOfAEquilateralTriangle() {
         Shape equilateral = new Equilateral(new BigDecimal(3));
         BigDecimal expectedPerimeter = BigDecimal.valueOf(9);
         assertEquals(0, expectedPerimeter.compareTo(equilateral.getPerimeter()));
     }
+
     @Test
     public void getTheCorrectAreaOfAIsoscelesTriangle() {
         Shape isosceles = new Isosceles(BigDecimal.valueOf(3), BigDecimal.valueOf(5));
@@ -103,7 +111,7 @@ public class ShapeTests {
     }
 
     @Test
-    public void testIfTwoTrianglesAreEqual () {
+    public void testIfTwoTrianglesAreEqual() {
         Shape triangleOne = new RightTriangle(BigDecimal.valueOf(3), BigDecimal.valueOf(4));
         Shape triangleTwo = new Scalene(BigDecimal.valueOf(3), BigDecimal.valueOf(5), BigDecimal.valueOf(4));
         System.out.println(triangleOne);
@@ -121,7 +129,12 @@ public class ShapeTests {
         assertEquals(equilateral, scalene);
     }
 
-
+    @Test
+    public void testHashCode() {
+        Shape right = new RightTriangle(BigDecimal.valueOf(3), BigDecimal.valueOf(5));
+        Shape iso = new Isosceles(BigDecimal.valueOf(20), BigDecimal.valueOf(10));
+        assertEquals(right.hashCode(), iso.hashCode());
+    }
 
 
 }
