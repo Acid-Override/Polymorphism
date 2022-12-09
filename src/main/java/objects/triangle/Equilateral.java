@@ -1,22 +1,21 @@
-//package objects.triangle;
-//
-//public class Equilateral extends Isosceles {
-//
-//    public Equilateral(double side) {
-//        super(side);
-//
-//        setArea(calculateArea());
-//        setPerimeter(calculatePerimeter());
-//
-//
-//    }
-//
-//    @Override
-//    protected double calculateArea() {
-//        return 0;
-//    }
-//    @Override
-//    protected double calculatePerimeter() {
-//        return 0;
-//    }
-//}
+package objects.triangle;
+
+import java.math.BigDecimal;
+
+public class Equilateral extends Isosceles {
+
+    public Equilateral(BigDecimal side) {
+        super(side, side);
+    }
+
+    @Override
+    public String toString() {
+        return "Equilateral Triangle{" +
+                "legs = " + getBase() +
+                ", height = " + getHeight() +
+                ", angles = " + getAlphaAngle() +
+                ", area = " + getArea() +
+                ", perimeter = " + getPerimeter() +
+                "}";
+    }
+}

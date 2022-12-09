@@ -4,11 +4,12 @@ import objects.curve.Circle;
 import objects.curve.Ellipse;
 import objects.quadrilateral.Rectangle;
 import objects.quadrilateral.Square;
-//import objects.triangle.Equilateral;
-//import objects.triangle.Isosceles;
+import objects.triangle.Equilateral;
+import objects.triangle.Isosceles;
 import objects.triangle.RightTriangle;
-//import objects.triangle.Scalene;
+import objects.triangle.Scalene;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Main {
@@ -50,8 +51,7 @@ public class Main {
                 System.out.println("Please enter the radius:");
                 String radiusString = sc.nextLine();
                 try {
-                double radius = Double.parseDouble(radiusString);
-                    Shape circle = new Circle(radius);
+                    Shape circle = new Circle(new BigDecimal(radiusString));
                     System.out.println(circle.toString());
                 } catch (Exception e) {
                     System.out.println(">>>>>>>   Invalid input   <<<<<<<<");
@@ -64,8 +64,8 @@ public class Main {
                 System.out.println("Please enter minor axis :");
                 String minorAxisString = sc.nextLine();
                 try {
-                    double major = Double.parseDouble(majorAxisString);
-                    double minor = Double.parseDouble(minorAxisString);
+                    BigDecimal major = new BigDecimal(majorAxisString);
+                    BigDecimal minor = new BigDecimal(minorAxisString);
                     Shape ellipse = new Ellipse(major, minor);
                     System.out.println(ellipse.toString());
                 } catch (Exception e) {
@@ -103,8 +103,8 @@ public class Main {
                 System.out.println("Please enter height length :");
                 String sideBString = sc.nextLine();
                 try {
-                    double sideA = Double.parseDouble(sideAString);
-                    double sideB = Double.parseDouble(sideBString);
+                    BigDecimal sideA = new BigDecimal(sideAString);
+                    BigDecimal sideB = new BigDecimal(sideBString);
 
                     Shape right = new RightTriangle(sideA, sideB);
                     System.out.println(right.toString());
@@ -113,51 +113,51 @@ public class Main {
                     System.out.println(e.getMessage());
                 }
                 break;
-//            case "6":
-//                System.out.println("Please enter side length :");
-//                String eqSideString = sc.nextLine();
-//                try {
-//                    double side = Double.parseDouble(eqSideString);
-//                    Shape equilateral = new Equilateral(side);
-//                    System.out.println(equilateral.toString());
-//                } catch (Exception e) {
-//                    System.out.println(">>>>>>>   Invalid input   <<<<<<<<");
-//                    System.out.println(e.getMessage());
-//                }
-//                break;
-//            case "7":
-//                System.out.println("Please enter leg length ");
-//                String isoLegLengthString = sc.nextLine();
-//                System.out.println("Please enter base length ");
-//                String isoBaseLengthString = sc.nextLine();
-//                try {
-//                    double isoLeg = Double.parseDouble(isoLegLengthString);
-//                    double isoBase = Double.parseDouble(isoBaseLengthString);
-//                    Shape isosceles = new Isosceles(isoLeg, isoBase);
-//                    System.out.println(isosceles.toString());
-//                } catch (Exception e) {
-//                    System.out.println(">>>>>>>   Invalid input   <<<<<<<<");
-//                    System.out.println(e.getMessage());
-//                }
-//                break;
-//            case "8":
-//                System.out.println("Please enter length A :");
-//                String scaleneLengthA = sc.nextLine();
-//                System.out.println("Please enter length B :");
-//                String scaleneLengthB = sc.nextLine();
-//                System.out.println("Please enter length C :");
-//                String scaleneLengthC = sc.nextLine();
-//                try {
-//                    double scaleneA = Double.parseDouble(scaleneLengthA);
-//                    double scaleneB = Double.parseDouble(scaleneLengthB);
-//                    double scaleneC = Double.parseDouble(scaleneLengthC);
-//                    Shape scalene = new Scalene(scaleneA, scaleneB, scaleneC);
-//                    System.out.println(scalene.toString());
-//                } catch (Exception e) {
-//                    System.out.println(">>>>>>>   Invalid input   <<<<<<<<");
-//                    System.out.println(e.getMessage());
-//                }
-//                break;
+            case "6":
+                System.out.println("Please enter side length :");
+                String eqSideString = sc.nextLine();
+                try {
+                    BigDecimal side = new BigDecimal(eqSideString);
+                    Shape equilateral = new Equilateral(side);
+                    System.out.println(equilateral.toString());
+                } catch (Exception e) {
+                    System.out.println(">>>>>>>   Invalid input   <<<<<<<<");
+                    System.out.println(e.getMessage());
+                }
+                break;
+            case "7":
+                System.out.println("Please enter leg length ");
+                String isoLegLengthString = sc.nextLine();
+                System.out.println("Please enter base length ");
+                String isoBaseLengthString = sc.nextLine();
+                try {
+                    BigDecimal isoLeg = new BigDecimal(isoLegLengthString);
+                    BigDecimal isoBase = new BigDecimal(isoBaseLengthString);
+                    Shape isosceles = new Isosceles(isoLeg, isoBase);
+                    System.out.println(isosceles.toString());
+                } catch (Exception e) {
+                    System.out.println(">>>>>>>   Invalid input   <<<<<<<<");
+                    System.out.println(e.getMessage());
+                }
+                break;
+            case "8":
+                System.out.println("Please enter length A :");
+                String scaleneLengthA = sc.nextLine();
+                System.out.println("Please enter length B :");
+                String scaleneLengthB = sc.nextLine();
+                System.out.println("Please enter length C :");
+                String scaleneLengthC = sc.nextLine();
+                try {
+                    BigDecimal dimensionA = new BigDecimal(scaleneLengthA);
+                    BigDecimal dimensionB = new BigDecimal(scaleneLengthB);
+                    double scaleneC = Double.parseDouble(scaleneLengthC);
+                    Shape scalene = new Scalene(scaleneA, scaleneB, scaleneC);
+                    System.out.println(scalene.toString());
+                } catch (Exception e) {
+                    System.out.println(">>>>>>>   Invalid input   <<<<<<<<");
+                    System.out.println(e.getMessage());
+                }
+                break;
         }
     }
 }

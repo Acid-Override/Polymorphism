@@ -6,11 +6,11 @@ import java.util.Objects;
 
 public abstract class Polygon implements Shape {
 
-    private int numberOfSides;
+    private final int numberOfSides;
     private BigDecimal area;
     private BigDecimal perimeter;
 
-    public Polygon(int numberOfSides) {
+    protected Polygon(int numberOfSides) {
         this.numberOfSides = numberOfSides;
     }
 
@@ -38,15 +38,6 @@ public abstract class Polygon implements Shape {
     public void setPerimeter(BigDecimal perimeter) {
         this.perimeter = perimeter;
     }
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (!(o instanceof Polygon)) return false;
-//        Polygon polygon = (Polygon) o;
-//        return getNumberOfSides() == polygon.getNumberOfSides() && Double.compare(polygon.getArea(), getArea()) == 0 && Double.compare(polygon.getPerimeter(), getPerimeter()) == 0;
-//    }
-
 
     @Override
     public boolean equals(Object o) {

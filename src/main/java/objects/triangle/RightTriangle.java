@@ -5,22 +5,23 @@ import java.math.RoundingMode;
 
 public class RightTriangle extends AbstractTriangle {
 
-    public RightTriangle(double base, double height) {
+    public RightTriangle(BigDecimal base, BigDecimal height) {
         setDimensions(base, height);
         setAngles();
         setPerimeter(calculatePerimeter());
         setArea(calculateArea());
     }
 
-    private void setAngles() {
+    @Override
+    protected void setAngles() {
         this.setAlphaAngle(BigDecimal.valueOf(Math.toDegrees(Math.asin(getBase().doubleValue()/getHypotenuse().doubleValue()))).setScale(2, RoundingMode.HALF_UP));
         this.setThetaAngle(BigDecimal.valueOf(Math.toDegrees(Math.asin(getHeight().doubleValue()/getHypotenuse().doubleValue()))).setScale(2, RoundingMode.HALF_UP));
         this.setOmegaAngle(BigDecimal.valueOf(180 - (getAlphaAngle().add(getThetaAngle())).doubleValue()));
     }
 
-    private void setDimensions(double base, double height) {
-        setBase(BigDecimal.valueOf(base));
-        setHeight(BigDecimal.valueOf(height));
+    private void setDimensions(BigDecimal base, BigDecimal height) {
+        setBase(base);
+        setHeight(height);
         setHypotenuse(calculateHypotenuse());
     }
 

@@ -3,13 +3,12 @@ package objects.triangle;
 import objects.Polygon;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public abstract class AbstractTriangle extends Polygon {
 
-    private double sideA;
-    private double sideB;
-    private double sideC;
+    private BigDecimal sideA;
+    private BigDecimal sideB;
+    private BigDecimal sideC;
     private BigDecimal base;
     private BigDecimal height;
     private BigDecimal hypotenuse;
@@ -18,7 +17,6 @@ public abstract class AbstractTriangle extends Polygon {
     private BigDecimal thetaAngle;
     private BigDecimal omegaAngle;
 
-    private BigDecimal semiPerimeter;
     private BigDecimal area;
     private BigDecimal perimeter;
 
@@ -26,41 +24,23 @@ public abstract class AbstractTriangle extends Polygon {
         super(3);
     }
 
-    protected AbstractTriangle(double sideA, double sideB, double sideC) {
-        super(3);
-        this.sideA = sideA;
-        this.sideB = sideB;
-        this.sideC = sideC;
-    }
 
-    public AbstractTriangle(double side) {
-        super(3);
-        this.sideA = side;
-        this.sideB = side;
-        this.sideC = side;
-
-//        this.alphaAngle = 60.0;
-//        this.thetaAngle = 60.0;
-//        this.omegaAngle = 60.0;
-    }
-
-    public void setSideA(double sideA) {
+    public void setSideA(BigDecimal sideA) {
         this.sideA = sideA;
     }
-    public double getSideA() {
+    public BigDecimal getSideA() {
         return sideA;
     }
-    public void setSideB(double sideB) {
+    public void setSideB(BigDecimal sideB) {
         this.sideB = sideB;
     }
-    public double getSideB() {
+    public BigDecimal getSideB() {
         return sideB;
     }
-    public void setSideC(double sideC) {
-        BigDecimal bde = new BigDecimal(sideC).setScale(6, RoundingMode.HALF_UP);
-        this.sideC = bde.doubleValue();
+    public void setSideC(BigDecimal sideC) {
+        this.sideC = sideC;
     }
-    public double getSideC() {
+    public BigDecimal getSideC() {
         return sideC;
     }
 
@@ -70,6 +50,7 @@ public abstract class AbstractTriangle extends Polygon {
     public void setBase(BigDecimal base) {
         this.base = base;
     }
+
 
     public BigDecimal getHeight() {
         return height;
@@ -106,30 +87,21 @@ public abstract class AbstractTriangle extends Polygon {
         return omegaAngle;
     }
 
-    public BigDecimal getSemiPerimeter() {
-        return semiPerimeter;
-    }
-
-
+    protected abstract void setAngles();
     public void setPerimeter(BigDecimal perimeter) {
         this.perimeter = perimeter;
     }
-
-
     @Override
     public BigDecimal getArea() {
         return area;
     }
-
     public void setArea(BigDecimal area) {
         this.area = area;
     }
-
     @Override
     public BigDecimal getPerimeter() {
         return perimeter;
     }
-
 
 
     @Override

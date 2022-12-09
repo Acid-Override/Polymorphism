@@ -12,10 +12,10 @@ public class Ellipse extends Polygon {
     private final BigDecimal minorAxis;
 
 
-    public Ellipse(double aAxis, double bAxis) {
+    public Ellipse(BigDecimal aAxis, BigDecimal bAxis) {
         super(1);
-        this.majorAxis = BigDecimal.valueOf(aAxis);
-        this.minorAxis = BigDecimal.valueOf(bAxis);
+        this.majorAxis = aAxis;
+        this.minorAxis = bAxis;
 
         setArea(calculateArea());
         setPerimeter(calculatePerimeter());
